@@ -1,0 +1,19 @@
+{
+  "name": "list-app",
+  "main": "list-app.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "iron-collapse": "~2.2.1",
+    "iron-ajax": "^2.1.3",
+    "block-character": "../blockCharacter/block-character.html",
+    "title-app": "../title/title-app.html"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  }
+}

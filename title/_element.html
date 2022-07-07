@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="title-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `title-app`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class TitleApp extends Polymer.Element {
+      static get is() { return 'title-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'title-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(TitleApp.is, TitleApp);
+  </script>
+</dom-module>

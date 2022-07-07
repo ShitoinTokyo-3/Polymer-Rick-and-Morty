@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="block-character">
+  <template>
+    <style>
+      :host {
+        display: inline-block;
+        padding: 16px;
+        width: 150px;
+        margin: 16px;
+        background-color: #fff;
+        border-radius: 4px;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+        border-radius: 4px;
+      }
+      h4{
+        font-size: 1.2em;
+        font-weight: 700;
+      }
+    </style>
+    <div>
+      <div>
+        <h4>[[name]]</h4>
+        <img src="[[image]]">
+        <p>[[status]]</p>
+        <p>[[species]]</p>
+    </div>
+  </template>
+
+  <script>
+
+    class BlockCharacter extends Polymer.Element {
+      static get is() { return 'block-character'; }
+      static get properties() {
+        return {
+          name: {
+            type: String,
+          },
+          image: {
+            type: String,
+            value:"https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+          },
+          status: {
+            type: String,
+            value:"unknown"
+          },
+          species: {
+            type: String,
+          },
+        };
+      }
+    }
+
+    window.customElements.define(BlockCharacter.is, BlockCharacter);
+  </script>
+</dom-module>

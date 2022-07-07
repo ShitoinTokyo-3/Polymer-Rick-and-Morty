@@ -1,0 +1,54 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../block-character/index.html">
+
+<dom-module id="list-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 16px;
+        text-align: center;
+      }
+    </style>
+
+    <iron-ajax
+      id="ajax"
+      url="https://rickandmortyapi.com/api/character"
+      last-response="{{characters}}"
+      >
+    </iron-ajax>
+    <template is="dom-repeat" items="{{characters.results}}">
+        <block-character 
+        name="[[item.name]]"
+        image="[[item.image]]"
+        status="[[item.status]]"
+        species="[[item.species]]"
+        >
+      </block-character>
+    </template>
+  </template> 
+
+  <script>
+
+    class ListApp extends Polymer.Element {
+      static get is() { return 'list-app'; }
+      static get properties() {
+        return {
+          characters: {
+            type: Array,
+            value: function(){
+              return [];
+            }
+          }
+        };
+      }
+      ready() {
+        super.ready();
+        this.$.ajax.generateRequest();
+      }
+    }
+
+    window.customElements.define(ListApp.is, ListApp);
+  </script>
+</dom-module>

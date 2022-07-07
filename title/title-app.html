@@ -1,0 +1,37 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="title-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 16px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 4.5em;
+        margin: 30px;
+      }
+      span {
+        color: #28B463 ;
+      }
+      span.sub{
+        display: block;
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    </style>
+    <h1>The <span>Rick and Morty</span> API</h1>
+    <span class="sub">LitElement</span>
+  </template>
+
+  <script>
+
+    class TitleApp extends Polymer.Element {
+      static get is() { return 'title-app'; }
+    }
+
+    window.customElements.define(TitleApp.is, TitleApp);
+  </script>
+</dom-module>
